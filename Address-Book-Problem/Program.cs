@@ -10,6 +10,13 @@ namespace Address_Book_Problem
         public static Dictionary<string, List<AddressBook>> State = new Dictionary<string, List<AddressBook>>();
         static void Main(string[] args)
         {
+
+            // Set the Foreground color to blue
+            Console.ForegroundColor = ConsoleColor.Blue;
+
+            // Display current Foreground color
+           // Console.WriteLine("Changed Foreground Color: {0}",
+                                   // Console.ForegroundColor);
             Console.WriteLine("-------------------------------------------------------------------------------------------------");
             Console.WriteLine("---------------------------------------Welcome to Address Book System----------------------------");
             Console.WriteLine("-------------------------------------------------------------------------------------------------");
