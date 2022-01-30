@@ -19,6 +19,11 @@ namespace Address_Book_Problem
             public string PhoneNum { get; set; }
             public string EmailId { get; set; }
         }
+        //adding contact
+        internal static void PrintContact(object person)
+        {
+            throw new NotImplementedException();
+        }
 
         public static void GetContact()
         {
