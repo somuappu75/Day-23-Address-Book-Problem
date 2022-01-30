@@ -48,31 +48,89 @@ namespace Address_Book_Problem
         //Getting Details OF user
         public void GetCustomer(string firstName, string lastName, string phoneNum, string address, string city, string state, string zipCode, string emailId)
         {
-
+            int contact = 0;
             AddressBook person = new AddressBook(firstName, lastName, phoneNum, address, city, state, zipCode, emailId);
-            if (people.Count == 0)
+            if (contact == 0)
             {
+
                 people.Add(person);
-            }
-            else
-            {
-                AddressBook people = this.people.Find(a => a.firstName.Equals(firstName));
-                if (people == null)
+                if (State.ContainsKey(state))
                 {
-                    AddressBook p = new AddressBook(firstName, lastName, address, city, state, phoneNum, zipCode, emailId);
-                    this.people.Add(p);
+                    List<AddressBook> existing = State[state];
+                    existing.Add(person);
+
                 }
                 else
                 {
-                    Console.WriteLine("-------Record is already exists-------");
-                    Console.WriteLine("Modify the details which has duplicate name");
-                    EditContact();
+                    stateList = new List<AddressBook>();
+                    stateList.Add(person);
+                    State.Add(state, stateList);
+
                 }
+                if (City.ContainsKey(city))
+                {
+                    List<AddressBook> existing = City[city];
+                    existing.Add(person);
+
+                }
+                else
+                {
+                    cityList = new List<AddressBook>();
+                    cityList.Add(person);
+                    City.Add(city, cityList);
+
+                }
+                contact++;
+            }
+            else if (contact != 0)
+            {
+                //Checking duplicates
+                AddressBook addressBookSystems = people.Find(x => x.firstName.Equals(firstName));
+                if (addressBookSystems == null)
+                {
+                    person = new AddressBook(firstName, lastName, address, city, state, zipCode, phoneNum, emailId);
+                    people.Add(person);
+                    if (State.ContainsKey(state))
+                    {
+                        List<AddressBook> existing = State[state];
+                        existing.Add(person);
+
+                    }
+                    else
+                    {
+                        stateList = new List<AddressBook>();
+                        stateList.Add(person);
+                        State.Add(state, stateList);
+
+                    }
+                    if (City.ContainsKey(city))
+                    {
+                        List<AddressBook> existing = City[city];
+                        existing.Add(person);
+
+                    }
+                    else
+                    {
+                        cityList = new List<AddressBook>();
+                        cityList.Add(person);
+                        City.Add(city, cityList);
+
+                    }
+                    contact++;
+                }
+                else
+                {
+                    Console.WriteLine("This person already exists in your AddressBook!");
+                }
+
             }
         }
 
-        
-       
+
+
+
+
+
         //print contact details
         public void PrintContact(AddressBook person)
         {
