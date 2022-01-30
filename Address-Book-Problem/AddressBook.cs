@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Address_Book_Problem
@@ -139,6 +140,25 @@ namespace Address_Book_Problem
                 }
 
 
+            }
+        }
+
+        //Deleteing the Contact
+        public static void DeletePeople()
+        {
+            Console.WriteLine("Enter the first name of the person you would like to remove.");
+            string Remove = Console.ReadLine();
+            foreach (var person in People.ToList())
+            {
+                if (person.FirstName.ToUpper() == Remove.ToUpper())
+                {
+                    People.Remove(person);
+                    Console.WriteLine("Contact is deleted");
+                }
+                else
+                {
+                    Console.WriteLine("Contact is not present");
+                }
             }
         }
         public static void ListContact()

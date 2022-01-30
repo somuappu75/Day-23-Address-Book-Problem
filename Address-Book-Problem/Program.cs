@@ -8,10 +8,38 @@ namespace Address_Book_Problem
         {
             //Adding Contact
             Console.WriteLine("------------Welcome To Adderess Book Program-------------");
-            Address_Book_Problem.AddressBook.GetContact();
-            //Editing -Contact
-            AddressBook.EditContact();
-            Address_Book_Problem.AddressBook.ListContact();
+            Console.WriteLine("1.Enter to add the details\n2.Enter to modify the details");
+            Console.WriteLine("3.Listing the details..");
+            Console.WriteLine("4.Remove or Delete the  COntact details");
+            Console.WriteLine("Enter a option");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    AddressBook.GetContact();
+                    AddressBook.ListContact();
+
+                    break;
+                case "2":
+                    AddressBook.GetContact();
+                    AddressBook.EditContact();
+                    AddressBook.ListContact();
+                    break;
+                case "3":
+                    AddressBook.GetContact();
+                    AddressBook.ListContact();
+                    break;
+                case "4":
+                    AddressBook.GetContact();
+                    AddressBook.DeletePeople();
+
+                    break;
+                default:
+                    Console.WriteLine("Enter a valid option");
+                    break;
+
+            }
+
+
         }
     }
 }
