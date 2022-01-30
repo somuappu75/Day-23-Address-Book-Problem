@@ -18,27 +18,27 @@ namespace Address_Book_Problem
             {
                 case "1":
                   
-                    addressBook.GetContact();
+                   // addressBook.GetContact();
                     addressBook.ListContact();
                     
 
                     break;
                 case "2":
-                    addressBook.GetContact();
+                   // addressBook.GetContact();
                     addressBook.EditContact();
                     addressBook.ListContact();
                     break;
                 case "3":
-                    addressBook.GetContact();
+                  //  addressBook.GetContact();
                     addressBook.ListContact();
                     break;
                 case "4":
-                    addressBook.GetContact();
+                   // addressBook.GetContact();
                     addressBook.DeletePeople();
 
                     break;
                 case "5":
-                    addressBook.GetContact();
+                   // addressBook.GetContact();
                     addressBook.ListContact();
                     break;
                 default:
