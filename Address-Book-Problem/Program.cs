@@ -81,10 +81,31 @@ namespace Address_Book_Problem
                         Console.WriteLine(" ");
                         addrBook.ListContact();
                         break;
-                    case 3:
+                       
+
+                }
+                if (addressBook.ContainsKey(addressbookname))
+                {
+                    Console.WriteLine("Existing address book name");
+                    return;
+                }
+                else
+                {
+                    addressBook.Add(addressbookname, addrBook.people);
+                }
+                noOfBooks++;
+
+                foreach (KeyValuePair<string, List<AddressBook>> addr in addressBook)
+                {
+                    Console.WriteLine("The address Books are:{0}", addr.Key);
+
+                }
+
+                    
                         Console.WriteLine("Enter 1-To Search a person through a City");
                         Console.WriteLine("Enter 2-To Search a person through a State");
                         Console.WriteLine("Enter 3-To view a person by state list or city list");
+                        Console.WriteLine("Enter 4. Sort the Person  ");
                         int opt = Convert.ToInt32(Console.ReadLine());
                         switch (opt)
                         {
@@ -97,30 +118,25 @@ namespace Address_Book_Problem
                                 break;
                             case 3:
                                 AddressBook.CountCityorState();
-
                                 break;
+                            case 4:
+                        //uc 11 sort name using sort function
+                        List<string> firstname = new List<string>();
+                        firstname.Sort();
+                        break;
+                        
+
+                       
+
+                        
                             default:
                                 Console.WriteLine("Invalid Option!");
                                 break;
                         }
-                        break;
-                }
-                if (addressBook.ContainsKey(addressbookname))
-                {
-                    Console.WriteLine("Existing address book name");
-                    return;
-                }
-                else
-                {
-                    addressBook.Add(addressbookname, addrBook.people);
-                }
-                noOfBooks++;
-                foreach (KeyValuePair<string, List<AddressBook>> addr in addressBook)
-                {
-                    Console.WriteLine("The address Books are:{0}", addr.Key);
-
-                }
+                        
+               
             }
+
             static void SearchAddress(int option)
             {
                 string city, state;
