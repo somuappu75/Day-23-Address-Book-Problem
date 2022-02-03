@@ -106,7 +106,10 @@ namespace Address_Book_Problem
                         Console.WriteLine("Enter 2-To Search a person through a State");
                         Console.WriteLine("Enter 3-To view a person by state list or city list");
                         Console.WriteLine("Enter 4. Sort the Person  ");
-                        int opt = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter 5. Sort the Based By City ");
+                        Console.WriteLine("Enter 6. Sort the Based By State  ");
+                        Console.WriteLine("Enter 7. Sort the Based By Zipcode ");
+                int opt = Convert.ToInt32(Console.ReadLine());
                         switch (opt)
                         {
 
@@ -123,6 +126,15 @@ namespace Address_Book_Problem
                         //uc 11 sort name using sort function
 
                         AddressBook.SortByPersonName(addressBook);
+                        break;
+                    case 5:
+                        AddressBook.SortBasedByCity(addressBook);
+                        break;
+                    case 6:
+                        AddressBook.SortBasedByState(addressBook);
+                        break;
+                    case 7:
+                        AddressBook.SortBasedByZipCode(addressBook);
                         break;
 
 
