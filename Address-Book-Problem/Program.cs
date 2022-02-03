@@ -121,23 +121,8 @@ namespace Address_Book_Problem
                                 break;
                             case 4:
                         //uc 11 sort name using sort function
-                        List<string> firstname = new List<string>();
-                        firstname.Sort();
-                        foreach (string s in firstname)
-                        Console.WriteLine(s);
-                        Console.ReadLine();
-                        break;
-                    case 5:
-                        List<string> SortBasedOnCity = new List<string>();
-                        SortBasedOnCity.Sort();
-                        break;
-                    case 6:
-                        List<string>SortBAsedOnZipCode  = new List<string>();
-                        SortBAsedOnZipCode.Sort();
-                        break;
-                    case 7:
-                        List<string> SortBasedOnState = new List<string>();
-                        SortBasedOnState.Sort();
+
+                        AddressBook.SortByPersonName(addressBook);
                         break;
 
 
