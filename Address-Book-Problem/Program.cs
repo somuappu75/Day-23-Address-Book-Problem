@@ -121,8 +121,7 @@ namespace Address_Book_Problem
                                 break;
                             case 4:
                         //uc 11 sort name using sort function
-                        List<string> firstname = new List<string>();
-                        firstname.Sort();
+                        AddressBook.SortPersonByName(addressBook);
                         break;
                         
 

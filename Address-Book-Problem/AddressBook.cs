@@ -309,7 +309,28 @@ namespace Address_Book_Problem
 
                 }
             }
+        }
+            //uc-11
+            public static void SortPersonByName(Dictionary<string, List<AddressBook>> addressBook)
+            {
+
+                SortedList<string, AddressBook> sorted;
+                foreach (KeyValuePair<string, List<AddressBook>> kvp in addressBook)
+                {
+                    Console.WriteLine("\n--------Displaying sorted Contact Person Details in address book: {0}-------\n", kvp.Key);
+                    sorted = new SortedList<string, AddressBook>();
+                    foreach (var member in kvp.Value)
+                    {
+                        sorted.Add(member.firstName, member);
+                    }
+                    foreach (var member in sorted)
+                    {
+                        Console.WriteLine(member.Value.ToString());
+
+                    }
+                }
+            }
 
         }
     }
-}
+
