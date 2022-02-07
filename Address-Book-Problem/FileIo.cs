@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Address_Book_Problem
 {
-    class FileIo
+     public class FileIo
     {
     }
 }

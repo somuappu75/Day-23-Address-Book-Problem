@@ -109,6 +109,8 @@ namespace Address_Book_Problem
                         Console.WriteLine("Enter 5. Sort the Based By City ");
                         Console.WriteLine("Enter 6. Sort the Based By State  ");
                         Console.WriteLine("Enter 7. Sort the Based By Zipcode ");
+                        Console.WriteLine("Enter 8.write a data in file");
+                        Console.WriteLine("Enter 9.read a data in file");
                 int opt = Convert.ToInt32(Console.ReadLine());
                         switch (opt)
                         {
@@ -137,7 +139,7 @@ namespace Address_Book_Problem
                         AddressBook.SortBasedByZipCode(addressBook);
                         break;
 
-
+                    
 
 
 
