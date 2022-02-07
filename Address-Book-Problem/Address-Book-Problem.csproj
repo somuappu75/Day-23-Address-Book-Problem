@@ -6,4 +6,8 @@
     <RootNamespace>Address_Book_Problem</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.2.1" />
+  </ItemGroup>
+
 </Project>
