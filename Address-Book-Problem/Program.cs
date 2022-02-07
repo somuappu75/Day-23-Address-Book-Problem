@@ -86,6 +86,7 @@ namespace Address_Book_Problem
 
             Search();
         }
+        //method for display
         public void Display(List<AddressBook> ContactArray, int N)
         {
             Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
@@ -99,7 +100,7 @@ namespace Address_Book_Problem
         }
 
 
-
+        //sorting using collection classes
         public static void SortContactPerson()
         {
 
@@ -155,6 +156,7 @@ namespace Address_Book_Problem
             Console.WriteLine("Enter 5.To Write AddressBook in File");
             Console.WriteLine("Enter 6.To Read a File");
             Console.WriteLine("Enter 7.Perform Csv Operations");
+            Console.WriteLine("Enter 8.Read and Write Operation in Json");
 
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -178,7 +180,11 @@ namespace Address_Book_Problem
                     FileIo.ReadAddressBook();
                     break;
                 case 7:
-                    CsvOperation.CSVOperation(NumberNames);
+                    CsvOperation.CSVOperation(NumberNames,1);
+                    break;
+                    
+                case 8:
+                    CsvOperation.CSVOperation(NumberNames, 2);
                     break;
 
                 default:
